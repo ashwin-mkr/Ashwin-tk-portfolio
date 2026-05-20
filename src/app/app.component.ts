@@ -10,10 +10,10 @@ import { FirebaseService } from './services/firebase.service';
   standalone: true,
   imports: [RouterOutlet, FormsModule, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
-  title = 'portfolio';
+  title = 'Ashwin TK Portfolio';
 
   // ── Three.js ──────────────────────────────────────────────
   private scene!: THREE.Scene;
@@ -22,7 +22,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   private particles!: THREE.Points;
   private animationFrameId!: number;
   private mouse = { x: 0, y: 0 };
-  private clock = new THREE.Clock();
+  private startTime = Date.now();
+  private elapsedTime = 0;
 
   // ── Contact Form ──────────────────────────────────────────
   contactForm = {
@@ -164,8 +165,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private animate(): void {
     this.animationFrameId = requestAnimationFrame(() => this.animate());
-    const e = this.clock.getElapsedTime();
-    if (this.particles) { this.particles.rotation.y = e * 0.05; this.particles.rotation.x = e * 0.02; }
+    this.elapsedTime = (Date.now() - this.startTime) / 1000;
+    if (this.particles) { this.particles.rotation.y = this.elapsedTime * 0.05; this.particles.rotation.x = this.elapsedTime * 0.02; }
     this.camera.position.x += (this.mouse.x * 5 - this.camera.position.x) * 0.02;
     this.camera.position.y += (this.mouse.y * 3 - this.camera.position.y) * 0.02;
     this.camera.lookAt(this.scene.position);
