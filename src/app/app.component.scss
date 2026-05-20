@@ -475,6 +475,49 @@
 }
 
 /* ==========================================
+   ABOUT SECTION
+   ========================================== */
+.about-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(6, 182, 212, 0.03) 50%, transparent 100%);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+
+  p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+
+    &:first-child {
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      opacity: 1;
+    }
+  }
+
+  .about-cta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}
+
+/* ==========================================
    SKILLS SECTION
    ========================================== */
 .skills-section {

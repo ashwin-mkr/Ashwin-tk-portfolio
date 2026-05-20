@@ -38,6 +38,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/Ashwin-tk-portfolio/",
               "budgets": [
                 {
                   "type": "initial",
