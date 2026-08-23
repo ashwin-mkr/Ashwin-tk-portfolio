@@ -786,6 +786,13 @@
       font-size: 0.9rem;
     }
   }
+
+  .resume-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 }
 
 /* ==========================================
